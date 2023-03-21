@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/style-s2.css">
+    <title>2048!-step2</title>
+</head>
+<body>
+    <div class="container">
+        <h1>2048</h1>
+        <h3><i>{ step2 }</i></h3>
+        <div id="area"></div>
+        <button id="btn_reset">reset</button>
+    </div>  
+
+    <script>
+        var area = document.getElementById('area'); 
+
+        area.onclick = function(e){
+
+            // 컬러 10개 중 랜덤
+            var rd = Math.floor(Math.random() * 10) + 1;
+        
+            // 박스를 미리 만들어 둔다. 
+            var box = document.createElement('div');
+
+            // 박스 동적생성
+            area.appendChild(box);
+            box.className = "color"+rd;
+
+            // 동적생성 후 박스의 크기를 구할 수 있다.
+            var boxHalf = box.offsetHeight/2;
+            // console.log(boxHalf);
+
+            //절대 좌표 구하기 
+            var posx = e.clientX-area.getBoundingClientRect().left-boxHalf;
+            var posy = e.clientY-area.getBoundingClientRect().top-boxHalf;
+
+            box.style.top = posy+"px";
+            box.style.left = posx+"px";
+
+            // scale animation 후 박스를 아래로 떨어뜨리기 
+            setTimeout(function(){
+                var boxHeight = box.offsetHeight;
+                // console.log(boxHeight);
+                box.style.top = area.getBoundingClientRect().height-boxHeight+"px";
+            }, 500);
+
+        }
+
+        //리셋
+        var reset = document.getElementById('btn_reset');
+
+        reset.onclick = function(e){
+            area.innerHTML = '';
+        }
+
+    </script>
+</body>
+</html>
