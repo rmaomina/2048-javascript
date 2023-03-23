@@ -106,18 +106,53 @@ h3 {
   flex-flow: row nowrap;
   border-radius: 1rem;
   border: 2px solid #fff;
-  background-color: #eee;
+  background-color: #fff;
   font-size: 3rem;
   justify-content: center;
   align-items: center;
+  width: 96px;
+}
+
+.tile.n1 {background-color: #fff; color: #1b2d9b;}
+.tile.n2 {background-color: #fff; color: #1b2d9b;}
+.tile.n3 {background-color: #abe8c5;}
+.tile.n6 {background-color: #abe8c5;}
+.tile.n12 {background-color: #63cfbe;}
+.tile.n24 {background-color: #63cfbe;}
+.tile.n48 {background-color: #00b5c0;}
+.tile.n96 {background-color: #00b5c0;}
+.tile.n192 {background-color: #0098c6;}
+.tile.n384 {background-color: #0098c6;}
+.tile.n768 {background-color: #007ac7;}
+.tile.n1536 {background-color: #007ac7;}
+.tile.n3072 {background-color: #0057ba;}
+.tile.n6144 {background-color: #0057ba;}
+.tile.n12288 {background-color: #1b2d9b;}
+.tile.n24576 {background-color: #1b2d9b;}
+
+.tile.n192,
+.tile.n384,
+.tile.n768,
+.tile.n1536,
+.tile.n3072,
+.tile.n6144,
+.tile.n12288,
+.tile.n24576 {
+  color: #fff;
+  font-size: 2.3rem;
+}
+
+.tile.n12288,
+.tile.n24576 {
+  font-size: 1.7rem;
 }
 
 #btn_reset {
   display: block;
   padding: 10px 20px;
-  border: 2px solid #111;
+  border: 3px solid #111;
   background-color: #fff;
-  font-size: 16px;
+  font-size: 1rem;
   margin: 20px auto;
   border-radius: .5rem;
 }
