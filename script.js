@@ -5,12 +5,24 @@ var cols = 4;
 var sets = [1, 2, 3, 6, 12, 24, 48, 96, 192, 384, 768, 1536, 3072, 6144];
 var max = 0;
 var score = 0;
+var bgColor = 1;
 
 window.onload = function () {
   setGame();
   setTile();
   setTile();
+
+  setInterval(changeBgColor, 10000);
 };
+
+function changeBgColor() {
+  const body = document.querySelector("body");
+  if (bgColor > 10) bgColor = 1;
+  else bgColor += 1;
+
+  body.classList = "";
+  body.classList.add(`c${bgColor}`);
+}
 
 function resetGame() {
   document.querySelector("#board").textContent = "";
