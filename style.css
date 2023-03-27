@@ -192,6 +192,7 @@ h3 {
 
 .bg-wrap {
   height: 100vh;
+  margin: 0 auto;
   overflow: hidden;
 }
 
